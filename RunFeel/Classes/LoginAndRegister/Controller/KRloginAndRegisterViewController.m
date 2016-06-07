@@ -10,7 +10,7 @@
 #import "KRUserInfo.h"
 #import "KRXMPPTool.h"
 
-@interface KRloginAndRegisterViewController ()
+@interface KRloginAndRegisterViewController ()<KRXMPPLoginDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameFlied;
 @property (weak, nonatomic) IBOutlet UITextField *userPasswordFlied;
 
@@ -25,6 +25,20 @@
 //    leftN.frame = CGRectMake(0, 0, 55, 20);
 //    self.userNameFlied.leftViewMode = UITextFieldViewModeAlways;
 //    self.userNameFlied.leftView = leftN;
+    
+    [KRXMPPTool sharedKRXMPPTool].loginDelegate = self;
+}
+- (void)LoginSuccess {
+    NSLog(@"控制器中获得登录成功");
+    //通过故事板界面切换（更换跟视图）
+    UIStoryboard *storyboad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    [UIApplication sharedApplication].keyWindow.rootViewController = storyboad.instantiateInitialViewController;
+}
+- (void)Loginfailed {
+    NSLog(@"控制器中获得登录失败");
+}
+- (void)LoginNetError {
+    NSLog(@"控制器中获得网络错误");
 }
 - (IBAction)passwordFiledEnter:(id)sender {
     [self loginBtnClick:nil];

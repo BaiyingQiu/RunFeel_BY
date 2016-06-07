@@ -48,7 +48,7 @@ singleton_implementation(KRXMPPTool)
     self.xmppStream.myJID = [XMPPJID jidWithString:jidStr];
     //开始连接
     NSError *error = nil;
-    [self.xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error];
+    [self.xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error];//调用连接方法，设置连接超时-1
     if (error) {
         NSLog(@"%@",error);
     }
@@ -58,6 +58,7 @@ singleton_implementation(KRXMPPTool)
 /** 连接成功 */
 - (void)xmppStreamDidConnect:(XMPPStream *)sender {
     //发送密码
+    [self.loginDelegate LoginSuccess];
     [self sendPassword];
     NSLog(@"连接成功");
 }
@@ -66,6 +67,9 @@ singleton_implementation(KRXMPPTool)
     //断开分为主动断开、密码错误断开
     if (error) {
         NSLog(@"%@",error);
+        [self.loginDelegate LoginNetError];
+    } else {        
+        [self.loginDelegate Loginfailed];
     }
 }
 - (void)sendPassword {
@@ -82,11 +86,15 @@ singleton_implementation(KRXMPPTool)
 /** 授权成功 */
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender {
     [self sendOnLine];
+    
     NSLog(@"授权成功");
 }
 /** 授权失败 */
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error {
-    NSLog(@"授权失败");
+//    NSLog(@"授权失败");
+    if (error) {
+        NSLog(@"%@",error);
+    }
 }
 /** 发送在线消息 */
 - (void)sendOnLine {
