@@ -79,6 +79,9 @@
                                 <state key="normal" title="登录" backgroundImage="button">
                                     <color key="titleColor" red="0.97009214740000005" green="0.96720318490000001" blue="0.950997117" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtnClick:" destination="io4-6K-CHq" eventType="touchUpInside" id="Ygf-5E-yEn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="so4-CU-IyV">
                                 <rect key="frame" x="47" y="436" width="75" height="24"/>
@@ -99,9 +102,9 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="第三方登录" translatesAutoresizingMaskIntoConstraints="NO" id="XuX-Zy-LUc">
-                                <rect key="frame" x="35" y="520" width="305" height="17"/>
+                                <rect key="frame" x="35" y="523" width="305" height="14"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="XuX-Zy-LUc" secondAttribute="height" multiplier="305:17" id="0yg-D2-xbc"/>
+                                    <constraint firstAttribute="width" secondItem="XuX-Zy-LUc" secondAttribute="height" multiplier="305:14" id="0yg-D2-xbc"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yp-3T-F46">
@@ -160,7 +163,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="userNameFlied" destination="4Bh-Fy-Taa" id="bJy-mB-eF2"/>
-                        <outlet property="userPassword" destination="cej-0U-aLe" id="I9s-LX-NcQ"/>
+                        <outlet property="userPasswordFlied" destination="cej-0U-aLe" id="BMP-JG-9TW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JjM-ul-1Zf" userLabel="First Responder" sceneMemberID="firstResponder"/>
