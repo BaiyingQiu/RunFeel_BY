@@ -9,6 +9,16 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 #import <UIKit/UIKit.h>
+
+/** 主机名 */
+#define KRXMPPHOSTNAME @"127.0.0.1"
+/** 端口号 */
+#define KRXMPPPORT 5222
+/** 服务器名 */
+#define KRXMPPDOMAIN @"tedu.cn"
+
+
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

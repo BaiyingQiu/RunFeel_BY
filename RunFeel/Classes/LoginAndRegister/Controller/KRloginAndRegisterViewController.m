@@ -8,6 +8,7 @@
 
 #import "KRloginAndRegisterViewController.h"
 #import "KRUserInfo.h"
+#import "KRXMPPTool.h"
 
 @interface KRloginAndRegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameFlied;
@@ -25,12 +26,16 @@
 //    self.userNameFlied.leftViewMode = UITextFieldViewModeAlways;
 //    self.userNameFlied.leftView = leftN;
 }
+- (IBAction)passwordFiledEnter:(id)sender {
+    [self loginBtnClick:nil];
+}
+
 - (IBAction)loginBtnClick:(UIButton *)sender {
     [KRUserInfo sharedKRUserInfo].userName = self.userNameFlied.text;
     [KRUserInfo sharedKRUserInfo].userPassword = self.userPasswordFlied.text;
     //调用xmppframework API完成登录
-    //最后是和服务器的交互封装成工具类
-    
+    //最好是和服务器的交互封装成工具类
+    [[KRXMPPTool sharedKRXMPPTool] userLogin];
     
 }
 
