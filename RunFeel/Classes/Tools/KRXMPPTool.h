@@ -17,6 +17,20 @@
 - (void)LoginNetError;
 
 @end
+/** 自己定义注册协议 */
+@protocol KRXMPPReisterDelegate <NSObject>
+- (void)reisterSuccess;
+- (void)reisterfailed;
+- (void)reisterNetError;
+@end
+typedef enum {
+    KRXMPPResultTypeRegisterSuccess,
+    KRXMPPResultTypeRegisterFailed,
+    KRXMPPResultTypeRegisterError
+    
+}KRXMPPResultType;
+//
+typedef void(^KRXMPPResultBlock)(KRXMPPResultType type);
 
 @interface KRXMPPTool : NSObject
 singleton_interface(KRXMPPTool)
@@ -26,7 +40,12 @@ singleton_interface(KRXMPPTool)
 
 /** 登录的代理属性 */
 @property (nonatomic, weak)id<KRXMPPLoginDelegate>  loginDelegate;
+//@property (nonatomic, weak)id<KRXMPPReisterDelegate> reisterDelegate;
 
 /** 完成登录的公开方法 */
 - (void)userLogin;
+///** 完成注册公开方法 */
+//- (void)userReister;
+/** 完成注册的公开方法,带有状态参数 */
+- (void)userReister:(KRXMPPResultBlock)block;
 @end

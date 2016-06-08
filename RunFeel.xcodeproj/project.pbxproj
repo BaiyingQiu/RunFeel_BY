@@ -147,6 +147,7 @@
 		853D41461D067B22006289DF /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 853D41451D067B22006289DF /* libresolv.tbd */; };
 		853D41481D067B34006289DF /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 853D41471D067B34006289DF /* libxml2.tbd */; };
 		853D415D1D069C6D006289DF /* KRXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 853D415C1D069C6D006289DF /* KRXMPPTool.m */; };
+		853D41601D06C79C006289DF /* KRRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853D415F1D06C79C006289DF /* KRRegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -436,6 +437,8 @@
 		853D414A1D067C3E006289DF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		853D415B1D069C6D006289DF /* KRXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRXMPPTool.h; sourceTree = "<group>"; };
 		853D415C1D069C6D006289DF /* KRXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRXMPPTool.m; sourceTree = "<group>"; };
+		853D415E1D06C79C006289DF /* KRRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRRegisterViewController.h; sourceTree = "<group>"; };
+		853D415F1D06C79C006289DF /* KRRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +538,8 @@
 			children = (
 				853D3F6F1D06685C006289DF /* KRloginAndRegisterViewController.h */,
 				853D3F701D06685C006289DF /* KRloginAndRegisterViewController.m */,
+				853D415E1D06C79C006289DF /* KRRegisterViewController.h */,
+				853D415F1D06C79C006289DF /* KRRegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1504,6 +1509,7 @@
 				853D40D61D067928006289DF /* XMPPStream.m in Sources */,
 				853D412D1D067928006289DF /* XMPPMessage+XEP_0308.m in Sources */,
 				853D40DF1D067928006289DF /* XMPPRosterCoreDataStorage.m in Sources */,
+				853D41601D06C79C006289DF /* KRRegisterViewController.m in Sources */,
 				853D415D1D069C6D006289DF /* KRXMPPTool.m in Sources */,
 				853D40C51D067928006289DF /* XMPPAnonymousAuthentication.m in Sources */,
 				853D410B1D067928006289DF /* TURNSocket.m in Sources */,

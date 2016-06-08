@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameFlied;
 @property (weak, nonatomic) IBOutlet UITextField *userPasswordFlied;
 
+
 @end
 
 @implementation KRloginAndRegisterViewController
@@ -30,9 +31,9 @@
 }
 - (void)LoginSuccess {
     NSLog(@"控制器中获得登录成功");
-    //通过故事板界面切换（更换跟视图）
-    UIStoryboard *storyboad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    [UIApplication sharedApplication].keyWindow.rootViewController = storyboad.instantiateInitialViewController;
+//    //通过故事板界面切换（更换跟视图）
+//    UIStoryboard *storyboad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    [UIApplication sharedApplication].keyWindow.rootViewController = storyboad.instantiateInitialViewController;
 }
 - (void)Loginfailed {
     NSLog(@"控制器中获得登录失败");
@@ -47,6 +48,7 @@
 - (IBAction)loginBtnClick:(UIButton *)sender {
     [KRUserInfo sharedKRUserInfo].userName = self.userNameFlied.text;
     [KRUserInfo sharedKRUserInfo].userPassword = self.userPasswordFlied.text;
+    [KRUserInfo sharedKRUserInfo].login = YES;
     //调用xmppframework API完成登录
     //最好是和服务器的交互封装成工具类
     [[KRXMPPTool sharedKRXMPPTool] userLogin];
