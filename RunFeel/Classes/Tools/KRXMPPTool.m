@@ -33,6 +33,15 @@ singleton_implementation(KRXMPPTool)
 - (void)setupXmppStream {
     self.xmppStream = [XMPPStream new];
    [self.xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    
+    //添加电子名片模块
+    self.xmppvCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
+    self.xmppvCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:self.xmppvCardStorage];
+    self.xmppvCardAvatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:self.xmppvCard];
+    [self.xmppvCard activate:self.xmppStream];
+    [self.xmppvCardAvatar activate:self.xmppStream];
+    
+    
 }
 - (void)connetToServer {
     // 断开之前连接

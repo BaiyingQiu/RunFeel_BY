@@ -22,4 +22,8 @@ singleton_interface(KRUserInfo)
 @property (nonatomic, copy) NSString *userRegisterPassword;
 /** 登录还是注册 */
 @property (nonatomic, assign, getter=isLogin) BOOL login;
+/** 昵称 */
+@property (nonatomic, copy) NSString *nickname;
+/** Email */
+@property (nonatomic, copy) NSString *Email;
 @end

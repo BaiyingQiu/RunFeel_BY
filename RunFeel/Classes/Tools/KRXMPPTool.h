@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XMPPFramework.h"
+#import "XMPPFramework.h"//已在XMPPFramework.h 中导入三个vCard头文件
 #import "Singleton.h"
 /** 自己定义登录协议 */
 @protocol KRXMPPLoginDelegate <NSObject>
@@ -33,7 +33,17 @@ typedef enum {
 typedef void(^KRXMPPResultBlock)(KRXMPPResultType type);
 
 @interface KRXMPPTool : NSObject
+//创建单列方法
 singleton_interface(KRXMPPTool)
+
+/** 电子名片模块 */
+@property (nonatomic, strong) XMPPvCardTempModule *xmppvCard;
+/** 电子名片对应的存储 */
+@property (nonatomic, strong) XMPPvCardCoreDataStorage *xmppvCardStorage;
+/** 头像模块 */
+@property (nonatomic, strong) XMPPvCardAvatarModule *xmppvCardAvatar;
+
+
 
 /** xmpp服务器交换核心引擎 */
 @property (nonatomic, strong) XMPPStream *xmppStream;

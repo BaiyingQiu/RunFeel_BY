@@ -131,7 +131,10 @@
                                     <constraint firstAttribute="height" constant="50" id="OIA-kM-kLJ"/>
                                     <constraint firstAttribute="width" constant="50" id="OoF-z8-Qmg"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="微信"/>
+                                <state key="normal" backgroundImage="微博"/>
+                                <connections>
+                                    <segue destination="ILv-q4-vbm" kind="show" id="jSa-iX-2LY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8C-BC-8wk">
                                 <rect key="frame" x="277" y="587" width="50" height="50"/>
@@ -139,7 +142,7 @@
                                     <constraint firstAttribute="width" constant="50" id="Ast-GQ-HnA"/>
                                     <constraint firstAttribute="height" constant="50" id="XmY-21-bUY"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="微博"/>
+                                <state key="normal" backgroundImage="微信"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,6 +182,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JjM-ul-1Zf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="337.5" y="412.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yS2-eY-Tol">
+            <objects>
+                <navigationController id="ILv-q4-vbm" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdb-cR-Sb9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Vbl-hF-nFL" kind="relationship" relationship="rootViewController" id="kdW-jk-uSU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w1R-Om-0YH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337.5" y="1222.5"/>
+        </scene>
+        <!--新浪登录-->
+        <scene sceneID="bT6-RC-Qtd">
+            <objects>
+                <viewController id="Vbl-hF-nFL" customClass="KRSinaLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S7I-wT-mqj"/>
+                        <viewControllerLayoutGuide type="bottom" id="NbX-TA-NM2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6ce-FU-VLg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aM-JZ-WeE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NbX-TA-NM2" firstAttribute="top" secondItem="0aM-JZ-WeE" secondAttribute="bottom" id="E8r-Gg-KKp"/>
+                            <constraint firstItem="0aM-JZ-WeE" firstAttribute="top" secondItem="S7I-wT-mqj" secondAttribute="bottom" id="IGM-Ke-Bs0"/>
+                            <constraint firstItem="NbX-TA-NM2" firstAttribute="top" secondItem="0aM-JZ-WeE" secondAttribute="bottom" id="anR-G0-yu6"/>
+                            <constraint firstItem="0aM-JZ-WeE" firstAttribute="top" secondItem="S7I-wT-mqj" secondAttribute="bottom" id="fPY-3N-Zk1"/>
+                            <constraint firstItem="0aM-JZ-WeE" firstAttribute="leading" secondItem="6ce-FU-VLg" secondAttribute="leading" id="gK8-cd-ygR"/>
+                            <constraint firstItem="0aM-JZ-WeE" firstAttribute="leading" secondItem="6ce-FU-VLg" secondAttribute="leadingMargin" id="hvV-9U-xdq"/>
+                            <constraint firstAttribute="trailing" secondItem="0aM-JZ-WeE" secondAttribute="trailing" id="p4C-MZ-BGX"/>
+                            <constraint firstItem="0aM-JZ-WeE" firstAttribute="top" secondItem="6ce-FU-VLg" secondAttribute="topMargin" id="vs7-1N-qKB"/>
+                            <constraint firstItem="0aM-JZ-WeE" firstAttribute="top" secondItem="S7I-wT-mqj" secondAttribute="bottom" id="wj8-si-dIV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IGM-Ke-Bs0"/>
+                                <exclude reference="fPY-3N-Zk1"/>
+                                <exclude reference="hvV-9U-xdq"/>
+                                <exclude reference="wj8-si-dIV"/>
+                                <exclude reference="E8r-Gg-KKp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="新浪登录" id="COw-tz-O0U">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="SIq-gK-RDY">
+                            <color key="tintColor" red="0.1647058824" green="0.094117647060000004" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backBtnClick:" destination="Vbl-hF-nFL" id="oqc-qT-cNC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="webView" destination="0aM-JZ-WeE" id="IDd-5F-dk2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lLx-Sc-tQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842.5" y="1222.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UO9-LF-YwA">
